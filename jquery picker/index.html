@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="myCalendarCtrl">
+  <br>
+
+
+  <div class="container-fluid">
+
+    <div class='well'>
+      <div class='row'>
+        <h4 class='col-sm-12'>1. Minimum code to add datepicker</h4>
+      </div>
+      <div class='form-group row'>
+        <div class='col-xs-6'>
+          <label>Start Date</label>
+          <input type=text date-picker
+            placeholder='MM/DD/YYYY'
+            maxlength="10"
+            ng-required='true'
+            class='form-control'
+            ng-model='model1.startDate'>
+        </div>
+        <div class='col-xs-6'>
+          <label>End Date</label>
+          <input type=text  date-picker
+              placeholder='MM/DD/YYYY'
+              maxlength="10"
+              ng-required='true'
+              class='form-control'
+              ng-model='model1.endDate'>
+        </div>
+      </div>
+      <pre >{{model1 | json}}</pre>
+    </div>
+
+
+    <div class='well'>
+      <div class='row'>
+        <h4 class='col-sm-12'>2. Min & Max Date Restrinction</h4>
+      </div>
+      <div class='form-group row'>
+        <div class='col-xs-6'>
+          <label>Start Date</label>
+          <input type=text date-picker
+            placeholder='MM/DD/YYYY'
+            maxlength="10"
+            ng-required='true'
+            class='form-control'
+            ng-model='model2.startDate'
+            min-date='-30D' max-date='+0D'>
+        </div>
+        <div class='col-xs-6'>
+          <label>End Date</label>
+          <input type=text  date-picker
+              placeholder='MM/DD/YYYY'
+              maxlength="10"
+              ng-required='true'
+              class='form-control'
+              ng-model='model2.endDate'
+              min-date='+0D' max-date='+1M'>
+        </div>
+      </div>
+      <pre >{{model2 | json}}</pre>
+    </div>
+
+
+    <div class='well'>
+      <div class='row'>
+        <h4 class='col-sm-12'>3.Dependent Start & End Date Restriction</h4>
+      </div>
+      <div class='form-group row'>
+        <div class='col-xs-6'>
+          <label>Start Date</label>
+          <input type=text date-picker
+            placeholder='MM/DD/YYYY'
+            maxlength="10"
+            ng-required='true'
+            class='form-control'
+            ng-model='model3.startDate'
+            max-date='{{model3.endDate}}'>
+        </div>
+        <div class='col-xs-6'>
+          <label>End Date</label>
+          <input type=text  date-picker
+              placeholder='MM/DD/YYYY'
+              maxlength="10"
+              ng-required='true'
+              class='form-control'
+              ng-model='model3.endDate'
+              min-date='{{model3.startDate}}'>
+        </div>
+      </div>
+      <pre >{{model3 | json}}</pre>
+    </div>
+
+
+    <div class='well'>
+      <div class='row'>
+        <h4 class='col-sm-12'>4. Format Date On Load</h4>
+      </div>
+      <div class='form-group row'>
+        <div class='col-xs-6'>
+          <label>Start Date</label>
+          <input type=text date-picker
+            placeholder='MM/DD/YYYY'
+            maxlength="10"
+            ng-required='true'
+            class='form-control'
+            ng-model='model4.startDate'>
+        </div>
+        <div class='col-xs-6'>
+          <label>End Date</label>
+          <input type=text  date-picker
+              placeholder='MM/DD/YYYY'
+              maxlength="10"
+              ng-required='true'
+              class='form-control'
+              ng-model='model4.endDate'>
+        </div>
+      </div>
+      <pre >{{model4 | json}}</pre>
+    </div>
+
+
+    <div class='well'>
+      <div class='row'>
+        <h4 class='col-sm-12'>5. Disable Datepicker icon with ng-disabled</h4>
+      </div>
+      <div class='form-group row'>
+        <div class='col-xs-5'>
+          <label>Start Date</label>
+          <input type=text date-picker
+            placeholder='MM/DD/YYYY'
+            maxlength="10"
+            ng-required='true'
+            class='form-control'
+            ng-disabled='model5.disabled'
+            ng-model='model5.startDate'>
+        </div>
+        <div class='col-xs-5'>
+          <label>End Date</label>
+          <input type=text  date-picker
+              placeholder='MM/DD/YYYY'
+              maxlength="10"
+              ng-required='true'
+              class='form-control'
+              ng-disabled='model5.disabled'
+              ng-model='model5.endDate'>
+        </div>
+        <div class='col-xs-2'>
+          <label>
+            <input type='checkbox'
+              ng-click='model5.disabled = !model5.disabled'/> Disable
+          </label>
+        </div>
+      </div>
+      <pre >{{model5 | json}}</pre>
+    </div>
+
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.8/es5-shim.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.js"></script>
+  <script src="script.js"></script>
+  <script src="directive.js"></script>
+</body>
+
+</html>
