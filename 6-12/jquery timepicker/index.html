@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <script data-require="moment.js@2.1.0" data-semver="2.1.0" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="position.js"></script>
+  <script src="timepicker.js"></script>
+  <script src="timepicker-tpl.js"></script>
+  <script src="psTimePicker.js"></script>
+  <script src="example.js"></script>
+</head>
+
+<body>
+  <div ng-controller="mainController">
+    <p class="input-group">
+      <input ps-input-time sy-timepicker-popup="HH:mm:ss" class="form-control" ng-model="date" show-meridian="false" is-open="opened" />
+      <span class="input-group-btn">
+          <button class="btn btn-default" ng-click="open($event)">
+            <i class="glyphicon glyphicon-time"></i>
+          </button>
+        </span>
+    </p>
+
+   <pre class="alert alert-info">Time is: {{date | date:'HH:mm:ss' }}</pre>
+  </div>
+  <p>https://github.com/randallmeeker/ps-input-time</p>
+</body>
+
+</html>

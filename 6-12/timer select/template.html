@@ -1,0 +1,31 @@
+
+<input type="text" timePicker >
+<div class="pickerClass">
+<span>Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>HH : MM : SS : AM/PM</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select ng-model="selectedHour" ng-options="w for w in hour">
+</select>:
+<select ng-model="selectedMinute" ng-options="x for x in minute">
+</select>:
+<select ng-model="selectedSecond" ng-options="y for y in second">
+</select>:
+<select ng-model="selectedMeridian" ng-options="y for y in meridian">
+</select>
+</div>
+
+
+
+
+<style>
+	.pickerClass{
+		position: absolute;
+		width: 300px;
+		height: 100px;
+		border: 1px solid grey;
+		padding: 10px;
+		z-index: 5;
+		background-color: white;
+
+
+	}
+</style>
